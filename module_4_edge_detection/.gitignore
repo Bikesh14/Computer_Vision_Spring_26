@@ -1,0 +1,2 @@
+# Ignore all .pt files
+sam2_checkpoints/*.pt
