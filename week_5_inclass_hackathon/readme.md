@@ -1,4 +1,4 @@
-# Eye Blink Rate Comparison Tool
+# Project 1: Eye Blink Rate Comparison Tool
 
 This project compares spontaneous eye blink rates across two different activities: **Reading a Document** and **Watching a Video**.
 
