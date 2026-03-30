@@ -6,8 +6,8 @@ import os
 # --- CONFIGURATION ---
 CHECKERBOARD_DIMS = (9, 6) 
 SQUARE_SIZE = 0.037  # Meters
-CALIB_IMG_DIR = 'resources/calibration_images'
-TEST_IMAGE_PATH = 'resources/Test_1.JPG'
+CALIB_IMG_DIR = '/Users/bbimali1/Documents/Computer_Vision_Spring_26/module_2_camera_calibration/resources/calibration_images'
+TEST_IMAGE_PATH = '/Users/bbimali1/Documents/Computer_Vision_Spring_26/module_2_camera_calibration/resources/Test_1.JPG'
 TEST_DISTANCE_CAMERA_TO_OBJECT = 2.6  # Meters
 
 # Global variables
@@ -136,9 +136,22 @@ def measure_object(image_path, distance_Z, K, D):
         print(f"Width:  {real_w:.4f} m ({real_w * 100:.2f} cm)")
         print(f"Height: {real_h:.4f} m ({real_h * 100:.2f} cm)")
         
+
 if __name__ == "__main__":
     camera_matrix, dist_coeffs = run_calibration()
+    
     if camera_matrix is not None:
+        # --- EXTRACT AND PRINT THE FOCAL LENGTH HERE ---
+        fx = camera_matrix[0, 0]
+        fy = camera_matrix[1, 1]
+        f_pixels = (fx + fy) / 2.0
+        
+        print("\n" + "="*40)
+        print("CRITICAL CALIBRATION DATA:")
+        print(f"Focal Length X (fx): {fx:.2f} pixels")
+        print(f"Focal Length Y (fy): {fy:.2f} pixels")
+        print(f"--> Averaged Focal Length (f): {f_pixels:.2f} pixels <--")
+        print("="*40 + "\n")
 
         # Real dimension of the object in Test_1.JPG is size: 13.4 x 19.9 cm
         measure_object(TEST_IMAGE_PATH, TEST_DISTANCE_CAMERA_TO_OBJECT, camera_matrix, dist_coeffs)
