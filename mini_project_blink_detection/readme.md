@@ -1,6 +1,6 @@
 # Blink & Facial Dimension Analysis
 
-This project analyzes videos (recorded during a research study)ss to extract:
+This project analyzes videos (recorded during a research study) to extract:
 - Blink count and blink rate
 - Basic facial geometry (head, eyes, nose, mouth dimensions)
 
@@ -10,11 +10,12 @@ It uses MediaPipe Face Landmarker for facial tracking and OpenCV for video proce
 
 ## Project Structure
 
-project/
-│── all_videos/            #  .MP4 videos
-│── face_landmarker.task    # MediaPipe model
-│── main_blink_detection.ipynb   # main script
-
+```text
+mini_project_blink_detection/
+│── all_videos/                 # .MP4 videos
+│── face_landmarker.task        # MediaPipe model
+│── main_blink_detection.ipynb  # main script
+```
 ---
 ## Requirements
 
